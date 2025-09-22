@@ -30,7 +30,7 @@ export const App: React.FC = () => {
       .finally(() => setLoadingUser(false));
   };
 
-  const onClose = () => {
+  const handleClose = () => {
     setSelectedTodo(null);
   };
 
@@ -90,7 +90,7 @@ export const App: React.FC = () => {
 
             <div className="block">
               {loading && <Loader />}
-              <TodoList todos={filteredTodos} handleShowTodo={handleShowTodo} />
+              <TodoList todos={filteredTodos} onShowTodo={handleShowTodo} />
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ export const App: React.FC = () => {
       {selectedTodo !== null && (
         <TodoModal
           loading={loadingUser}
-          onClose={onClose}
+          onClose={handleClose}
           user={user}
           todo={selectedTodo}
         />

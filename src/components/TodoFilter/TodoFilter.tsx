@@ -39,12 +39,14 @@ export const TodoFilter: React.FC<TodoFilterProps> = ({
 
       <span className="icon is-right" style={{ pointerEvents: 'all' }}>
         {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+        {search && (
         <button
           data-cy="clearSearchButton"
           type="button"
           className="delete"
           onClick={onClear}
         />
+        )}
       </span>
     </p>
   </form>
